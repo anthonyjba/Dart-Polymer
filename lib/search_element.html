@@ -1,0 +1,51 @@
+<link rel="import" href="../../packages/polymer_elements/iron_flex_layout_classes.html">
+<link rel="import" href="../../packages/polymer_elements/iron_ajax.html">
+
+
+<dom-module id="search-element">
+    <style>
+
+        :host {
+            display: block;
+
+        }
+
+        seeker-element{
+            width:50%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+        .seeker-container{
+            width:100%;
+}
+
+    </style>
+
+    <template>
+        <iron-ajax
+                auto
+                id ="allProducts"
+                url="http://pinkiepie.todr.me:8080/devmeetings-0.1/allProducts/2/"
+                handle-as="json"
+                on-response="getProducts">
+        </iron-ajax>
+
+        <iron-ajax
+                id ="findProducts"
+                url="http://pinkiepie.todr.me:8080/devmeetings-0.1/findProducts/2"
+                handle-as="json"
+                on-response="getProducts">
+        </iron-ajax>
+
+        <div class="seeker-container">
+            <seeker-element id="seeker" outer-to-seek="{{hay}}"></seeker-element>
+        </div>
+        <div class = "layout horizontal wrap" id = "product-container">
+          <template is="dom-repeat" items="{{products}}">
+            <div class = "description-container">
+                <product-element product="{{item}}"></product-element>
+            </div>
+          </template>
+        </div>
+    </template>
+</dom-module>

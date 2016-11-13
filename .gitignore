@@ -1,0 +1,6 @@
+# Dependency directories
+.pub
+
+# Optional npm cache file
+.packages
+pubspec.lock

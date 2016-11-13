@@ -1,0 +1,17 @@
+{
+    "id": 1,
+    "photo": "astrolabio.jpg",
+    "name": "Astrolabio parlante",
+    "description": "Un magnífico astrolabio parlante",
+    "price": 20,
+    "amount": {
+      "id": 6,
+      "amount": 0,
+      "product": {
+        "id": 1
+      },
+      "user": {
+        "id": 2
+      }
+    }
+}

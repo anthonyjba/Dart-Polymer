@@ -1,0 +1,33 @@
+<link rel="import" href="../../packages/polymer_elements/iron_flex_layout_classes.html">
+<link rel="import" href="../../packages/polymer_elements/paper_button.html">
+
+<dom-module id="product-element">
+    <style>
+        :host {
+            display: block;
+        }
+    </style>
+
+    
+    <template>
+        <iron-ajax
+            id="productAddCart"
+            url="http://pinkiepie.todr.me:8080/devmeetings-0.1/cart/2/{{product.id}}"
+            handle-as="json"
+            method="POST"
+            on-response="productAddCart">
+        </iron-ajax>
+
+    
+      <div><h2>{{product.id}} - {{product.name}}</h2>
+      <p>
+      {{product.description}}
+      </p>
+      <h3><strong>{{product.price}} €</strong></h3>
+      <div class = "make-premium ">
+                        <paper-button id="car">Add carrito</paper-button>
+      </div>
+      <hr>      
+      </div>
+    </template>
+</dom-module>

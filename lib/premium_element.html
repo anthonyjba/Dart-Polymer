@@ -1,0 +1,25 @@
+<dom-module id="premium-element">
+    <style>
+        :host {
+            display: block;
+        }
+    </style>
+
+    <iron-ajax
+        auto
+        id="productsInCart"
+        url="http://pinkiepie.todr.me:8080/devmeetings-0.1/productsInCart/2"
+        handle-as="json"
+        on-response="productsAll">
+    </iron-ajax>
+
+    <template>
+      <div>
+        <template is="dom-repeat" items="{{products}}">
+          <div class = "description-container">
+              <product-element product="{{item}}"></product-element>
+          </div>
+        </template>
+      </div>
+    </template>
+</dom-module>
